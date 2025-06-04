@@ -30,9 +30,9 @@ def login():
         while True:
             print("1. Deposit")
             print("2. Withdraw")
-            print("4. Check your balance")
+            print("3. Check your balance")
             if isinstance(user_account, SavingsAccount):
-                print("5. Calculate Interest")
+                print("4. Calculate Interest")
             print("99. logout")
 
             action = input("Choose an action: ").strip().lower()
@@ -42,9 +42,9 @@ def login():
             elif action == "withdraw" or action == "2":
                 amount = float(input("Enter withdrawal amount: "))
                 withdraw(user_account, amount)
-            elif action == "check balance" or action == "4":
+            elif action == "check balance" or action == "3":
                 print("Current Balance:", user_account.get_balance())
-            elif action == "calculate_interest" or action == "5" and isinstance(user_account, SavingsAccount):
+            elif action == "calculate_interest" or action == "4" and isinstance(user_account, SavingsAccount):
                 print("Calculating interest for Savings Account.")
                 user_account.calculate_interest()
             elif action == "logout" or action == "99":
